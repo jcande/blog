@@ -12,8 +12,6 @@ Welcome back. In this article we'll be discussing the finer points of tag
 systems that we will need to emulate, not to mention emit code for. For a bit
 more context check out the [introduction]({filename}/tag_introduction.md).
 
-__Table of Contents__
-
 [TOC]
 
 ## Preface

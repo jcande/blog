@@ -11,8 +11,6 @@ Summary: Introduction to the ELVM project, including instructions for adding a n
 
 This is part of a series on implementing a toolchain for a weird machine. See the [introduction]({filename}/tag_introduction.md) for more context.
 
-__Table of Contents__
-
 [TOC]
 
 ## The ELVM Abstract Machine

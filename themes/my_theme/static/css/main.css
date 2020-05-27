@@ -1,12 +1,4 @@
 body {
-  font-size: 100%;
-  width: 80%;
-  min-width: 400px;
-  min-height: 200px;
-  padding: 1em;
-  margin: 5% 10%;
-  display: block;
-
   margin: 40px auto;
   max-width: 1200px;
   line-height: 1.6;
@@ -28,16 +20,38 @@ h4 a { color: inherit !important }
 h5 a { color: inherit !important }
 h6 a { color: inherit !important }
 
+pre {
+    height: auto;
+    max-height: 60vh;
+    overflow: auto;
+    background-color: #eeeeee;
+    word-break: normal !important;
+    word-wrap: normal !important;
+    white-space: pre !important;
+}
+
 #menu li {
     display: inline;
 }
 
-.toc li{
-    /*
-    display: inline;
-    */
-    padding: 0.2rem 0;
+.toctitle {
+    font-weight: bold;
 }
+
+.toc {
+    background: none repeat scroll 0 0;
+    border: thin solid gray;
+    display: table;
+    font-size: 95%;
+    padding: 1%;
+    width: auto;
+}
+
+/*
+.toc li, .toc ul, .toc ul li{
+    list-style: outside none none !important;
+}
+*/
 
 #post-list {
     margin-bottom: 1em;

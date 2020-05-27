@@ -26,7 +26,9 @@ AUTHOR_FEED_RSS = None
 ## https://github.com/getpelican/pelican-plugins/tree/master/extract_toc
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.toc': {},
+        'markdown.extensions.toc': {
+            'title': "Table of Contents",
+        },
     },
 }
 
