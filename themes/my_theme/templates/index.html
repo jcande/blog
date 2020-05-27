@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content_subtitle %}<h2>{{ SITESUBNAME }}</h2>{% endblock content_subtitle %}
+
+{% block content %}
+<section id="content">
+
+  {% block note %}
+  <!-- home -->
+  {% for page in pages %}
+    {% if page.title == "home" %}
+      {{ page.content }}
+    {% endif %}
+  {% endfor %}
+  <!-- /home -->
+  {% endblock note %}
+
+  <hr />
+
+  <h3>Articles</h3>
+
+  <!-- post-list -->
+  <ul id="post-list">
+  {% for article in articles_page.object_list %}
+    <li>
+      <article class="hentry">
+
+        <!-- title -->
+        <header>
+          <h4 class="entry-title">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+              {{ article.title }}
+            </a>
+          </h4>
+        </header>
+        <!-- /title -->
+
+        <!-- authors -->
+        <footer class="post-info">
+          <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+          <address class="vcard author">By
+            {% for author in article.authors %}
+              <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+            {% endfor %}
+          </address>
+        </footer>
+        <!-- /authors -->
+
+        <!-- summary -->
+        <div class="entry-content">
+          {{ article.summary }}
+        </div>
+        <!-- /summary -->
+
+      </article>
+    </li>
+  {% endfor %}
+  </ul>
+  <!-- /post-list -->
+
+  {% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+  {% endif %}
+
+</section>
+{% endblock content %}

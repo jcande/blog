@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+  <head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" />
+    <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+    {%- if FEED_RSS %}<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />{% endif -%}
+    {% endblock head %}
+  </head>
+
+  <body id="index" class="home">
+    <header id="banner" class="body">
+
+      {% block content_title %}
+      <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+      {% endblock content_title %}
+
+      {% if self.content_subtitle() %}
+        {% block content_subtitle %}{% endblock content_subtitle %}
+      {% endif %}
+
+      {% block navigation %}
+      <nav id="menu">
+        {% for title, link in MENUITEMS %}
+          <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+      </nav>
+      {% endblock navigation %}
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer %}
+    <footer>
+      <hr />
+      <a href="{{ SITEURL}}/">Back to blog</a>
+    </footer>
+    {% endblock footer %}
+
+  </body>
+</html>
