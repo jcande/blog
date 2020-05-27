@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+# run like:
+# make clean ; pelican content -s pelicanconf.py && make serve
 # Uncomment following line if you want document-relative URLs when developing locally
 RELATIVE_URLS = True
 
 AUTHOR = 'Jared Candelaria'
 SITENAME = 'Esoteric Nonsense and Other Ramblings'
 SITESUBNAME = 'A website from Jared Candelaria'
-SITEURL = 'http://calabi-yau.space/blog'
+SITEURL = 'https://calabi-yau.space/blog'
 
 TIMEZONE = 'US/Pacific'
 

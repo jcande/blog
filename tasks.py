@@ -21,6 +21,11 @@ CONFIG = {
     'settings_publish': 'publishconf.py',
     # Output path. Can be absolute or relative to tasks.py. Default: 'output'
     'deploy_path': SETTINGS['OUTPUT_PATH'],
+    # Remote server configuration
+    'ssh_user': 'napum_demigodsblog',
+    'ssh_host': 'nfs',
+    'ssh_port': '22',
+    'ssh_path': '/home/public/blog',
     # Port for `serve`
     'port': 8000,
 }
