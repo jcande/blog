@@ -4,11 +4,12 @@
 {% block title %}{{ article.title|striptags }}{% endblock %}
 
 {% block content_title %}
-<h1><a href="{{ SITEURL }}/">{{ article.title }}</a></h1>
+<h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+<h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
 {% endblock content_title %}
 
 {% block content_subtitle %}
-<h2><a href="{{ SITEURL }}/{{ category.url }}">{{ article.category }}</a></h2>
+<h3><a href="{{ SITEURL }}/{{ category.url }}">{{ article.category }}</a></h3>
 {% endblock content_subtitle %}
 
 {% block head %}
