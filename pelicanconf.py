@@ -3,7 +3,8 @@
 from __future__ import unicode_literals
 
 # run like:
-# make clean ; pelican content -s pelicanconf.py && make serve
+# make devserver
+# make rsync_upload
 # Uncomment following line if you want document-relative URLs when developing locally
 RELATIVE_URLS = True
 
@@ -11,6 +12,8 @@ AUTHOR = 'Jared Candelaria'
 SITENAME = 'Esoteric Nonsense and Other Ramblings'
 SITESUBNAME = 'A website from Jared Candelaria'
 SITEURL = 'https://calabi-yau.space/blog'
+# relative to SITEURL
+SITEIMAGE = 'images/badman.jpg'
 
 TIMEZONE = 'US/Pacific'
 

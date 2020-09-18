@@ -18,6 +18,9 @@
   <meta property="og:title" content="{{ article.title|striptags }}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+  {% if SITEIMAGE %}
+    <meta property="og:image" content="{{ SITEURL }}/{{ SITEIMAGE }}" />
+  {% endif %}
 
   {% if article.summary %}
     <meta property="og:description" content="{{ article.summary }}" />
