@@ -19,11 +19,6 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
 
-  {% if article.twittername %}
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:creator" content="{{ article.twittername }}" />
-  {% endif %}
-
   {% if article.summary %}
     <meta property="og:description" content="{{ article.summary }}" />
   {% endif %}
@@ -31,6 +26,11 @@
   {% for tag in article.tags %}
     <meta property="tags" content="{{ tag }}" />
   {% endfor %}
+
+  {% if article.twittername %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="{{ article.twittername }}" />
+  {% endif %}
 {% endblock %}
 
 {% block content %}
