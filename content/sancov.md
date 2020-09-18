@@ -5,7 +5,7 @@ Tags: compilers; programming; security
 Slug: sanitizer-coverage-interface
 Authors: Jared Candelaria
 TwitterName: @jsc29a
-Summary: Modern compilers provide a great mechanism to provide developers convenient access to program details in the form of various sanitizers. This post will discuss some aspects of that interface.
+Summary: Discussion on some aspects of the sanitizer interface provided by modern compilers.
 
 In the everlasting struggle to rid the world of bugs, compilers are being deployed in interesting ways. One particularly interesting development is "standard" instrumentation that can be used to automatically discover bugs during runtime for native programs. One of the primary means to accomplish this is through novel applications of [code coverage](https://en.wikipedia.org/wiki/Code_coverage) instrumentation. These raw primitives are general and can be extended by an application developer implementing various callbacks.
 
