@@ -4,6 +4,7 @@ Category: reference
 Tags: compilers; programming; security
 Slug: sanitizer-coverage-interface
 Authors: Jared Candelaria
+TwitterName: @jsc29a
 Summary: Modern compilers provide a great mechanism to provide developers convenient access to program details in the form of various sanitizers. This post will discuss some aspects of that interface.
 
 In the everlasting struggle to rid the world of bugs, compilers are being deployed in interesting ways. One particularly interesting development is "standard" instrumentation that can be used to automatically discover bugs during runtime for native programs. One of the primary means to accomplish this is through novel applications of [code coverage](https://en.wikipedia.org/wiki/Code_coverage) instrumentation. These raw primitives are general and can be extended by an application developer implementing various callbacks.
@@ -12,7 +13,7 @@ More simply, the compiler generates code which calls into the sanitizer coverage
 
 To provide some context, I wanted to see how this interface was used in practice. I'll talk about what the compiler is doing underneath the interface as well as what a consumer receives above the interface. The compiler I'm using is [clang](https://clang.llvm.org/) and the consumer is the fuzzer [honggfuzz](https://honggfuzz.dev/).
 
-If you are familiar with fuzzing in general than feel free to jump right to [an explanation of the sanitizer coverage interface](#sanitizer-coverage-interface-overview).
+If you are familiar with fuzzing in general then feel free to jump right to [an explanation of the sanitizer coverage interface](#sanitizer-coverage-interface-overview).
 
 [TOC]
 
@@ -151,7 +152,7 @@ This is invoked at the beginning of every basic block. The interesting thing abo
 
 [The honggfuzz runtime](https://github.com/google/honggfuzz/blob/598d1f9e5cec91e7a0c2cd8f5a7e164508fc6e1e/libhfuzz/instrument.c#L602)
 
-Honggfuzz uses this to update a bunch of statistics. If a guard is 0 it is considered uninteresting and so doesn't impact any further statistics. We decide if a guard is uninteresting if we've traversed the edge it describes more than 100 times. The first time we see the edge (`localCovFeedback->pcGuardMap[*guard_ptr] == 0`), however, we increments pidTotalEdge to keep track of how many new edges we've seen. Otherwise it increments pidTotalCmp. Then, it implements a step-function of the edge-count. As the edge-count surpasses the current step we count it as a new edge, otherwise we treat it as a feature (i.e., cmp).
+Honggfuzz uses this to update a bunch of statistics. If a guard is 0 it is considered uninteresting and so doesn't impact any further statistics. We decide if a guard is uninteresting if we've traversed the edge it describes more than 100 times. The first time we see the edge (`localCovFeedback->pcGuardMap[*guard_ptr] == 0`), however, we increment pidTotalEdge to keep track of how many new edges we've seen. Otherwise it increments pidTotalCmp. Then, it implements a step-function of the edge-count. As the edge-count surpasses the current step we count it as a new edge, otherwise we treat it as a feature (i.e., cmp).
 
 [Compiler Source](https://github.com/llvm/llvm-project/blob/6a822e20ce700f2f98e80c6ce8dda026099c39b7/llvm/lib/Transforms/Instrumentation/SanitizerCoverage.cpp#L488) and [Compiler Output](https://godbolt.org/z/dTG838)
 
@@ -191,6 +192,6 @@ The special aspect is that outside of the initialization, there is no explicit f
 Just like `__sanitizer_cov_trace_pc_guard_init`, we setup another array that corresponds to hit counters for the instrumented edges. In the compilation output we can see we (really explicitly, thanks to -O0) retrieve the value into al, increment it by 1, and store it back into the proper slot (e.g., `.L__sancov_gen_.1`).
 
 # Wrapping Up
-Hopefully this has been a helpful overview of some ideas behind sanitizers. Now you should be able to implement both sides of the interface. If you want to instrument an emulator you can now add the proper calls to the equivalent runtime consumer by mimicking the approach LLVM took. If you'd like to create your own fuzzer and take advantage of compiler instrumentation, you should be able to crib from honggfuzz.
+Hopefully this has been a helpful overview of some ideas behind sanitizers. Now you should be able to implement both sides of the interface. You can generate guards to pass into consumers, or handle calls from arbitrary programs. If you want to instrument an emulator you can now add the proper calls to the equivalent runtime consumer by mimicking the approach LLVM took. If you'd like to create your own fuzzer and take advantage of compiler instrumentation, you should be able to crib from honggfuzz.
 
 Similarly, you can now abuse the interface and get a nice genetic fitness framework by manipulating the various fuzzers that consume the sancov data!
