@@ -23,6 +23,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Do not format the summary field.
+FORMATTED_FIELDS = []
+
 # plugins
 
 ## https://github.com/getpelican/pelican-plugins/tree/master/extract_toc

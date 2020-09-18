@@ -15,12 +15,21 @@
 {% block head %}
   {{ super() }}
 
-  {% if article.description %}
-    <meta name="description" content="{{ article.description }}" />
+  <meta property="og:title" content="{{ article.title|striptags }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+
+  {% if article.twittername %}
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="{{ article.twittername }}" />
+  {% endif %}
+
+  {% if article.summary %}
+    <meta property="og:description" content="{{ article.summary }}" />
   {% endif %}
 
   {% for tag in article.tags %}
-    <meta name="tags" content="{{ tag }}" />
+    <meta property="tags" content="{{ tag }}" />
   {% endfor %}
 {% endblock %}
 
