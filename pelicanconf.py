@@ -37,6 +37,9 @@ MARKDOWN = {
         'markdown.extensions.toc': {
             'title': "Table of Contents",
         },
+        'markdown.extensions.codehilite': {
+            'css_class': "highlight",
+        },
     },
 }
 

@@ -70,6 +70,7 @@ The format will include the compilation flag to emit the corresponding feature b
 ## Demonstration Code
 Oh right, and because we actually need some data in the form of a program we'll use the below which should handle all of the cases we are concerned with.
 
+    :::C
     int a(void)
     {
         return 1;
