@@ -4,6 +4,7 @@ Category: Spelunking in the Turing Tarpit
 Tags: compilers; programming; esoteric
 Slug: elvm
 Authors: Jared Candelaria
+TwitterName: @jsc29a
 Summary: Introduction to the ELVM project, including instructions for adding a new target.
 
 

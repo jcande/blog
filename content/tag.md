@@ -4,6 +4,7 @@ Category: Spelunking in the Turing Tarpit
 Tags: compilers; programming; esoteric
 Slug: tag
 Authors: Jared Candelaria
+TwitterName: @jsc29a
 Summary: Deep dive into the tag system and how to program it.
 Modified: 2020-5-26 16:28
 

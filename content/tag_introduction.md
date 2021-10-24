@@ -4,6 +4,7 @@ Category: Spelunking in the Turing Tarpit
 Tags: compilers; interpreters; programming; esoteric
 Slug: tag_introduction
 Authors: Jared Candelaria
+TwitterName: @jsc29a
 Summary: Series overview introducing the tag system.
 Modified: 2020-5-26 16:27
 
