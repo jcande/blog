@@ -29,6 +29,17 @@ AUTHOR_FEED_RSS = None
 # Do not format the summary field.
 FORMATTED_FIELDS = []
 
+# Do not process html files
+READERS = {'html': None}
+
+# Do not mess with data/
+STATIC_PATHS = ['data']
+
+# Assume draft by default
+#DEFAULT_METADATA = {'status': 'draft'}
+
+
+
 # plugins
 
 ## https://github.com/getpelican/pelican-plugins/tree/master/extract_toc

@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head>
+
+    <meta name="date" content="2022-01-23T15:11:00-08:00" />
+
+    <meta name="charset" charset="utf-8">
+    <!-- this is mobile related magic -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>domino parlor (rule110)</title>
+    <!-- this is probably misguided. I want the dominos to take up the full screen and this does that. -->
+    <style type="text/css">
+      /* Disable scrollbar */
+      html { overflow-y: hidden; }
+      #domino-div {
+          height: 94vh;
+          width: 97vw;
+      }
+    </style>
+    <script type="text/javascript">
+        // This sets the state based on the URL. Yeah, there is like 40 ways we
+        // need to plumb this information along. I'm not a web guy and was
+        // losing steam at this point. Forgive me, I realize it is bad.
+        function decorate_for_guests() {
+            const url = new URL(document.location.href);
+            const params = new URLSearchParams(url.search);
+            const defaults = {
+                "palette_add": "28",
+                "palette_mul": "22",
+                // (8, 8) looks cool
+            };
+            const elements = ["palette_add", "palette_mul"];
+            elements.forEach(function(id) {
+                var element = document.getElementById(id);
+                if (params.get(id) !== null) {
+                    element.value = params.get(id);
+                } else if (defaults[id] !== undefined) {
+                    element.value = defaults[id];
+                }
+            });
+        }
+
+        var kickstart;
+        (kickstart = function() {
+            window.onload = decorate_for_guests;
+        })();
+    </script>
+  
+<link rel="preload" href="/blog/data/domino/index-5f755bb5f629e744_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/blog/data/domino/index-5f755bb5f629e744.js"></head>
+  <body>
+    <div id="wrapper">
+      <div>
+        <input type="checkbox" id="border" name="border" checked>
+        <label for="border">Show Infinite Border</label>
+<!--
+      </div>
+
+      <div>
+-->
+        |
+        <input type="checkbox" id="tile_lines" name="tile_lines">
+        <label for="tile_lines">Show Tile Boundaries</label>
+<!--
+      </div>
+
+      <div>
+-->
+        |
+        <label for="palette_add">Color #1</label>
+        <input type="number" id="palette_add" name="palette_add" style="width: 7ch">
+        <label for="palette_mul">Color #2</label>
+        <input type="number" id="palette_mul" name="palette_mul" style="width: 7ch">
+
+        |
+        <a id="state_link" href="">Share</a>
+      </div>
+    </div>
+    <script type="module">import init from '/blog/data/domino/index-5f755bb5f629e744.js';init('/blog/data/domino/index-5f755bb5f629e744_bg.wasm');</script>
+    <app>
+      <div id="domino-div">
+        <canvas id="domino" style="border:1px solid black;" ref="{this.canvasRef}" width="{this.state.canvasWidth}" height="{this.state.canvasHeight}">Looks like you won't be seeing some cool dominos.</canvas>
+<!--
+        <canvas id="domino" style="border:1px solid black;">Looks like you won't be seeing some cool dominos.</canvas>
+-->
+      </div>
+    </app>
+  
+
+<script>(function () {
+    var url = 'ws://' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
