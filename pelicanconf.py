@@ -8,10 +8,14 @@ from __future__ import unicode_literals
 # Uncomment following line if you want document-relative URLs when developing locally
 RELATIVE_URLS = True
 
+# NOTE because we're using `Makefile` some of these settings may not apply. If
+# there is something strange, assume the makefile takes priority.
+
 AUTHOR = 'Jared Candelaria'
 SITENAME = 'Esoteric Nonsense and Other Ramblings'
 SITESUBNAME = 'A website from Jared Candelaria'
 SITEURL = 'https://calabi-yau.space/blog'
+OUTPUT_PATH = 'output/blog'
 # relative to SITEURL
 SITEIMAGE = 'images/badman.jpg'
 

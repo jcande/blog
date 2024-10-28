@@ -4,7 +4,7 @@ PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output
+OUTPUTDIR=$(BASEDIR)/output/blog
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
@@ -12,6 +12,12 @@ SSH_HOST=nfs
 SSH_PORT=22
 SSH_USER=napum_demigodsblog
 SSH_TARGET_DIR=/home/public/blog
+
+# XXX NOTE
+# to make the webserver work I edited pelican
+# 	/home/jsc/.local/lib/python3.10/site-packages/pelican/server.py
+# Specifically class RootedHTTPServer() to have a different `base_path` so our
+# server's root is above "blog"
 
 
 DEBUG ?= 0

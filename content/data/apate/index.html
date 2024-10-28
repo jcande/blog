@@ -1,0 +1,32 @@
+<html><head>
+    <meta charset="utf-8">
+    <!-- this is mobile related magic -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- this is probably misguided. I want the dominos to take up the full screen and this does that. -->
+    <style type="text/css">
+      /* Disable scrollbar */
+      html { overflow-y: hidden; }
+      #illusion-div {
+          height: 98vh;
+          width: 99vw;
+      }
+    </style>
+  
+<link rel="preload" href="/blog/data/apate/apate-8e5459ccbfd32cd3_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" integrity="sha384-7N5iQIrns0Wj0AhTTyZ7cpwj7cKc8f0QuqOnb5kw2BcXVCKVKGK28luDT2zYL0Ql">
+<link rel="modulepreload" href="/blog/data/apate/apate-8e5459ccbfd32cd3.js" crossorigin="anonymous" integrity="sha384-x9smLCHhR-ZEWngiCFZDgB0O_A7ri0uRTi_E74LM3Mi_cqVJqFT5aQgFYlmcDmrK">
+<link rel="modulepreload" href="/blog/data/apate/snippets/apate-01fcc353ffac50b4/src/debug.js" crossorigin="anonymous" integrity="sha384-p6-Auc0AtKGNwPXa8tROUh3UBUTERdjQucdGbxS5eF5-w2YMFaWooGuOnAt-sFFC"></head>
+  <body>
+    <app>
+      <div id="illusion-div">
+        <canvas id="phantasm" style="border:1px solid black;" ref="{this.canvasRef}" width="{this.state.canvasWidth}" height="{this.state.canvasHeight}">Looks like you won't be seeing some cool illusions.</canvas>
+      </div>
+    </app>
+  
+
+
+<script type="module">
+import init, * as bindings from '/blog/data/apate/apate-8e5459ccbfd32cd3.js';
+init('/blog/data/apate/apate-8e5459ccbfd32cd3_bg.wasm');
+window.wasmBindings = bindings;
+
+</script></body></html>
