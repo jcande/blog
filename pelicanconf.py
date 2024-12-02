@@ -37,7 +37,7 @@ FORMATTED_FIELDS = []
 READERS = {'html': None}
 
 # Do not mess with data/
-STATIC_PATHS = ['data']
+STATIC_PATHS = ['data', 'images']
 
 # Assume draft by default
 #DEFAULT_METADATA = {'status': 'draft'}
