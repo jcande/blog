@@ -37,11 +37,19 @@ FORMATTED_FIELDS = []
 READERS = {'html': None}
 
 # Do not mess with data/
-STATIC_PATHS = ['data', 'images']
+STATIC_PATHS = ['data', 'images', 'extra']
 
 # Assume draft by default
 #DEFAULT_METADATA = {'status': 'draft'}
 
+# This is pretty hacky. We *KNOW* that our output path is /blog but these files
+# are "extra" in the sense that they sit OUTSIDE of that path. We escape our
+# confinement of /blog by placing these in the parent directory. This has
+# implication in how we build and cleanup as well.
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': '../robots.txt'},
+    'extra/favicon.ico': {'path': '../favicon.ico'},
+}
 
 
 # plugins
