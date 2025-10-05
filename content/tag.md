@@ -28,7 +28,7 @@ proper way to interpret these structures is that the queue is program data
 while the table is program code. This is a harvard architecture.
 
 <center>
-  [![A Representation of the Computation Step]({attach}/images/abstract_tag_system.png)]({attach}/images/og_abstract_tag_system.JPG)
+  [![A Representation of the Computation Step]({filename}/images/abstract_tag_system.png)]({filename}/images/og_abstract_tag_system.JPG)
 </center>
 
 We will rapidly delve into the nitty gritty but I want to first give some

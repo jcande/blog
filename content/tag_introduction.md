@@ -15,7 +15,7 @@ You may be wondering why I set out on this journey in the first place. The answe
 
 The whole series will be posted to [the category: spelunking in the turing tarpit]({category}spelunking-in-the-turing-tarpit). Check there (or the rss feed) for new entries. Roughly, the content will include describing [the tag system]({filename}/tag.md) in pretty good detail. We will focus on Hao Wang's proof of computability as that is what I spent the most time on though other proofs will be referenced. Once we firmly understand what makes these things computable we can dive into an interpreter. There are a few of them but the one we'll cover likely will have some spiffy optimizations that make the exponential time and space much more manageable. To generate data for the interpreter we will of course need a compiler so we'll have to cover some compilers and their parsers. I started with haskell but eventually moved to rust so this will only cover the end result. Writing w-machine code by hand is pretty tiring so we'll need another level of compiler to generate this for us and this is where [ELVM](https://github.com/shinh/elvm) comes in. I'll likely add a conclusion article that nicely let's you know you can stop reading.
 
-<center>[![A Map Through the Tag Toolchain]({attach}/images/map.png)]({attach}/images/og_map.JPG)</center>
+<center>[![A Map Through the Tag Toolchain]({filename}/images/map.png)]({filename}/images/og_map.JPG)</center>
 
 Now that we have the map laid down I can ramble a bit. Tag systems! What a
 ridiculous computer. These things are used in all kinds of extremely esoteric

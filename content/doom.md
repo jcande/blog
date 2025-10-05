@@ -45,7 +45,7 @@ An OR gate takes two inputs and is true if either is true. We can map this onto 
 You may also be concerned with what DOOM will do to a lift if you activate it twice. Very keen observation! To be brief, DOOM does NOT keep a queue of triggers and any active trigger is blocking. This means that for the duration of the trigger, all other activations are silently ignored. This works out nicely in our favor.
 
 <center>
-![An OR gate implemented in DOOM]({attach}/images/doom-OR.png)
+![An OR gate implemented in DOOM]({filename}/images/doom-OR.png)
 </center>
 
 Pictured above is our implementation of an OR gate. The top two alcoves have triggers that both lower a thin green sector which is blocking a monster's path. Two giant yellow arrows illustrate this linkage. Further along the monster's path is a teleporter that transports the monster back to its initial spawn point which is illustrated by a dotted green arrow. Don't worry if the teleporter is close enough to the gate that the monster runs through it multiple times, due to the behavior of how DOOM activates lifts it won't double-activate anything. The final aspect to observe in the image is the gray line between the green-sector and the teleporter. This tiny linedef represents the output of the gate.
@@ -55,7 +55,7 @@ Pictured above is our implementation of an OR gate. The top two alcoves have tri
 An AND gate takes two inputs and is only true if BOTH inputs are true. We can implement this with two distinct lifts: the monster can only pass if they're both lowered.
 
 <center>
-![An AND gate implemented in DOOM]({attach}/images/doom-AND.png)
+![An AND gate implemented in DOOM]({filename}/images/doom-AND.png)
 </center>
 
 The only difference between this and the OR gate is that each signal triggers a distint sector. Every other aspect from the teleport to the gate output is the same.
@@ -64,7 +64,7 @@ The only difference between this and the OR gate is that each signal triggers a 
 A NOT gate takes only one input and inverts it: true becomes false and false becomes true. Sounds simple enough until you go to implement it. Since our schema treats demons as signals, how do we materialize one from the aether in the false case? Our previous approach to have walls that lower to enable passage won't do. Instead we can have floors that become trenches when set which prevent passage.
 
 <center>
-![A NOT gate implemented in DOOM]({attach}/images/doom-NOT.png)
+![A NOT gate implemented in DOOM]({filename}/images/doom-NOT.png)
 </center>
 
 This has all the components of the OR gate: the monster, the gate itself, the output linedef, and the teleporter. But you'll also notice something new, a small notch on the left side of the gate. This controls the depth of our trench (remember, lifts in DOOM descend to the lowest adjoining sector height). In this way, we can have the gate at the normal floor height by default (i.e., the false case) but descend when set (i.e., true) to prevent movement.
@@ -89,20 +89,20 @@ Now that we have some convenient building blocks, we'll need to actual construct
 
 Traditionally, it looks like this:
 <center>
-![A traditional half-adder circuit]({attach}/images/doom-half-adder-circuit.png)<br />
+![A traditional half-adder circuit]({filename}/images/doom-half-adder-circuit.png)<br />
 [Image taken from https://electronics.stackexchange.com/a/166634](https://electronics.stackexchange.com/a/166634)
 </center>
 
 In DOOM, it looks like this:
 <center>
-![A non-traditional half-adder circuit]({attach}/images/doom-half-adder-map.png)
+![A non-traditional half-adder circuit]({filename}/images/doom-half-adder-map.png)
 </center>
 
 And here's a video of it in action:
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/qB9R3L5FZ3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ## Download
-In case you want to play around with the map, you can download it [here]({attach}/data/half-adder.zip). You'll likely want to open it in a doom level editor. I used [Doom Builder](http://doombuilder.com/) to make it.
+In case you want to play around with the map, you can download it [here]({filename}/data/half-adder.zip). You'll likely want to open it in a doom level editor. I used [Doom Builder](http://doombuilder.com/) to make it.
 
 # Limitations
 As the DOOM engine was not designed to be an interpreter, there are some constraints on our programs written against it. The biggest one is how large our programs can be. Since each gate uses at least one tag, we can use this as a metric to derive an upper-bound on the size of a program. As the DOOM engine uses 16-bit tags, this means we can have, at most, 65535 gates. This is not a particularly large number. We may be able to implement a very small CPU but this limit will be hit pretty quickly I believe.
