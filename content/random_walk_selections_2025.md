@@ -48,7 +48,7 @@ Goodbye is just a concept. A thought to catalyze and filter subsequent thought. 
 
 Goodbye is easy to say. Goodbye is hard to believe. Goodbye is impossible to mean.
 
-# 2/3/2023, Friday, 7:02
+# 2/3/2023, Friday
 
 ## (7:02)
 
@@ -193,7 +193,7 @@ We abstract and reify, encode and decode, translate out of and into.
 
 REPL.
 
-# 2/27/2023, Monday, 9:22
+# 2/27/2023, Monday
 
 ## (7:04)
 
@@ -394,6 +394,20 @@ The days are abstraction. The days are convenient chunks of psychic cycles. I sp
 How was my day?  
 It was alright.
 
+# 7/21/2023, Friday, 21:49
+
+The treeline pops from the ambient moonless glow. Light pollution swallowed the stars, its excrement leeching the soul of the night into this muted, faded black. A crowd-crush of stagnant heat leers as I trudge aimlessly. The only sound is of my foot falls twisting and compressing the gravel in an angry hiss before dissipating into the aether. Not even insects care to fuck in a dark like this.
+
+The treeline looms, the zenith gradually dissipating like falling into a bottomless well. I can't tell whether my eyes are open or closed. My awareness morphs infinitely forwards before recoiling flat against my skull. The abstract idea of trees fill my mind like a magnified balloon. The gravel metronome my only indicator of passing time.
+
+The rhythmic squelching ticks on and on. Minutes turn to decades, to millenia, to the rise and fall of entire universes. And suddenly I've arrived. I stand at oblivion and see the void stuffed full before me. A wholeness incomprehensible collapsed into nothingness. Simultaneously trapped in infinite density and staring at a pinprick. This endless expanse brimming with disjointed limbs, writhing with neglect, dripping with hatred. I occupy nothing and everything, a point before the plane.
+
+I don't want to be here. Every direction I turn yields the same scene. My eyes clamped open. A needle in my spine.
+
+I retreat from the senses. I focus my gaze past the vanishing point. A storm cloud rolls past and I tumble into a pit of my own creation. I'm not so clever as I hoped for the fidelity of this simulation is immense. I find myself back before eternity. It is sprawling, limitless, aleph<sub>aleph<sub>aleph<sub>aleph<sub>...</sub></sub></sub></sub>. I'm overpowered. I fall to my knees.
+
+I'll always come back here. I'll be out for a time and then tumble back down here. I can recall phrases I've said beyond here. "I always feel that it'll last forever". I don't feel that. Not now. But the feeling of being outside of this... it's not real. It was never real. It's a fiction. Wool I pulled over my eyes. THIS is real. And I can ignore it for stretches at a time but it will always be here. The void knows no limits. I could dump the entire universe here and it would take up no space at all.
+
 # 8/27/2023, Sunday, 14:20
 
 Everything is understandable. What does that mean? What does understand mean? What does "mean" mean? What even does "everything" mean? Is "everything" an enumerable set? What forms are presumed in "every" and "thing"? Are there non-things that are excluded that may somehow be considered "interesting"? "Relevant"?
@@ -554,11 +568,22 @@ I can focus on nothing but escaping. I don't even know what I'm escaping.
 
 I circle the void, institutionally dancing on the rim of emptiness, only able to see the topology of my lived path, blind to life outside my cell.
 
-# 1/30/2024, Tuesday, 8:04
+# 1/30/2024, Tuesday
 
+## (8:04)
 Symbols shatter. Concepts constrain. Designs degrade. Forms fuse.
 
 To live is to renew. To solidify is to die. The world is a pulsing, breathing, writhing mass of sweat and mold. How could it be any other way?
+
+## (15:00)
+
+It's all the same. We exist as sensory experience with fixed sensors. Our whole consciousness can only access, only observe, what those instruments sense. Each valley and peak are in some sense fixed. Internally, at least. The external mountain is immaterial. You can scale anything. It's all the same to you.
+
+It makes me think of the w-machine implementation of random access memory. The code itself is blind, forgetful, amnesiac. And yet... and yet the full effect can compute anything.
+
+Sloshing around in a bounded box, a concept, a form, a shape, an entity, an abstraction. But this thing isn't chained up or imprisoned. It roams. There's an essence in the interplay. A flow through the form. A higher sense emergent from the static and the dynamic. Something wider. Something ineffable. A tower without a floor or a ceiling.
+
+And truly. It's all the same.
 
 # 3/20/2024, Wednesday, 8:09
 
