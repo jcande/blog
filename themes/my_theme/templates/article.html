@@ -18,7 +18,10 @@
   <meta property="og:title" content="{{ article.title|striptags }}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-  {% if SITEIMAGE %}
+  <!-- hello! -->
+  {% if article.previewimage %}
+    <meta property="og:image" content="{{ SITEURL }}/{{ article.previewimage }}" />
+  {% elif SITEIMAGE %}
     <meta property="og:image" content="{{ SITEURL }}/{{ SITEIMAGE }}" />
   {% endif %}
 
