@@ -1,12 +1,11 @@
 Title: Almost arbitrary selections 2022-2025
-Date: 2025-10-5 00:00
+Date: 2025-10-5 10:05
 Category: Externalized Inner World
 Tags: rambling
 Slug: arbitrary-selections-1
 Authors: Jared Candelaria
 TwitterName: @jsc29a
 Summary: A collection of postcards accumulated over the years.
-Status: draft
 PreviewImage: images/recursive_painting.jpg
 
 Here is a semi-curated list of ramblings of mine over the past few years. I didn't edit them. I don't necessarily agree with them. This isn't a statement in and of itself, I just wanted to share some postcards of various places.
